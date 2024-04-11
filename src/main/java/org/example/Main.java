@@ -23,6 +23,7 @@ public class Main {
         System.out.println("Input square coefficients: " + coefficients);
     }
 
+    @SuppressWarnings({"unused", "SameParameterValue"})
     static double[] solve(double a, double b, double c) {
         if ((Math.abs(a - epsilon) < epsilon)
                 || !Double.isFinite(a)
