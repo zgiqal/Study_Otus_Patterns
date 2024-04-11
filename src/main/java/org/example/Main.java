@@ -34,7 +34,7 @@ public class Main {
         }
 
         double discriminant = b*b - 4*a*c;
-        if (discriminant < 0) {
+        if (discriminant < -epsilon) {
             return new double[]{};
         }
         if (discriminant < epsilon) {
