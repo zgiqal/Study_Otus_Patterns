@@ -25,7 +25,7 @@ public class MoveTest {
         when(testMovable.getLocation()).thenReturn(getVector(12., 5.));
         when(testMovable.getVelocity()).thenReturn(getVector(-7., 3.));
 
-        new Move(testMovable).Execute();
+        new Move(testMovable).execute();
 
         verify(testMovable, times(1)).setLocation(getVector(5., 8.));
 
@@ -33,13 +33,13 @@ public class MoveTest {
 
     @Test
     void givenNonLocation_whenMove_thenError() {
-        assertThrows(NullPointerException.class, () -> new Move(testMovable).Execute());
+        assertThrows(NullPointerException.class, () -> new Move(testMovable).execute());
     }
 
     @Test
     void givenNonVelocity_whenMove_thenError() {
         when(testMovable.getLocation()).thenReturn(new Vector<>(List.of(0., 0.)));
-        assertThrows(NullPointerException.class, () -> new Move(testMovable).Execute());
+        assertThrows(NullPointerException.class, () -> new Move(testMovable).execute());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class MoveTest {
         when(testMovable.getVelocity()).thenReturn(getVector(1., 0.));
         doThrow(IllegalArgumentException.class).when(testMovable).setLocation(any());
 
-        assertThrows(IllegalArgumentException.class, () -> new Move(testMovable).Execute());
+        assertThrows(IllegalArgumentException.class, () -> new Move(testMovable).execute());
     }
 
 }

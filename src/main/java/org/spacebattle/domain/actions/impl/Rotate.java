@@ -8,7 +8,7 @@ import org.spacebattle.domain.objects.IRotable;
 public class Rotate implements ICommand {
     private IRotable rotatable;
 
-    public void Execute() {
+    public void execute() {
         int angularDelta = rotatable.getAngularVelocity() % rotatable.getDirectionsNumber();
         rotatable.setDirection(rotatable.getDirection() + angularDelta);
     }
