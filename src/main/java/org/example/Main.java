@@ -23,6 +23,7 @@ public class Main {
         System.out.println("Input square coefficients: " + coefficients);
     }
 
+    @SuppressWarnings({"unused", "SameParameterValue"})
     static double[] solve(double a, double b, double c) {
         if ((Math.abs(a - epsilon) < epsilon)
                 || !Double.isFinite(a)
@@ -33,7 +34,7 @@ public class Main {
         }
 
         double discriminant = b*b - 4*a*c;
-        if (discriminant < 0) {
+        if (discriminant < -epsilon) {
             return new double[]{};
         }
         if (discriminant < epsilon) {
