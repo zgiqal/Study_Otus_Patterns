@@ -23,7 +23,7 @@ public class RotateTest {
         when(testRotable.getDirection()).thenReturn(5);
 
 
-        new Rotate(testRotable).Execute();
+        new Rotate(testRotable).execute();
 
         verify(testRotable, times(1)).setDirection(6);
 
@@ -32,7 +32,7 @@ public class RotateTest {
 
     @Test
     void givenNonDirectionNumbers_whenMove_thenError() {
-        assertThrows(ArithmeticException.class, () -> new Rotate(testRotable).Execute());
+        assertThrows(ArithmeticException.class, () -> new Rotate(testRotable).execute());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class RotateTest {
         when(testRotable.getDirectionsNumber()).thenReturn(1);
         doThrow(IllegalArgumentException.class).when(testRotable).setDirection(0);
 
-        assertThrows(IllegalArgumentException.class, () -> new Rotate(testRotable).Execute());
+        assertThrows(IllegalArgumentException.class, () -> new Rotate(testRotable).execute());
     }
 
 }

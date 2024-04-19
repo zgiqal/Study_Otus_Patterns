@@ -10,7 +10,7 @@ import static org.spacebattle.util.VectorUtil.add;
 public class Move implements ICommand {
     private IMovable movable;
 
-    public void Execute() {
+    public void execute() {
         movable.setLocation(add(movable.getLocation(), movable.getVelocity()));
     }
 }
