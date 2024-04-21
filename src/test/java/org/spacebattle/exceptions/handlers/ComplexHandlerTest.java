@@ -15,14 +15,14 @@ public class ComplexHandlerTest {
     IExceptionHandler testHandler;
 
 
-    protected void assertCommandsChain(ICommand testCmd, Class<?>... clss) throws InterruptedException {
+    protected void assertCommandsChain(ICommand testCmd, Class<?>... clss) throws Exception {
         ICommand cmd = testCmd;
         for(Class<?> cls : clss) {
             cmd = processAndAssertResult(cmd, cls);
         }
     }
 
-    private <T> ICommand processAndAssertResult(ICommand cmd, Class<T> cls) throws InterruptedException {
+    private <T> ICommand processAndAssertResult(ICommand cmd, Class<T> cls) throws Exception {
         try {
             cmd.execute();
         } catch (Exception e) {

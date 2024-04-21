@@ -16,7 +16,7 @@ public class RepeatAndLogHandlerTest extends ComplexHandlerTest {
     }
 
     @Test
-    void givenCommandToRepeatAndLogOnException_whenException_thenRightCommands() throws InterruptedException {
+    void givenCommandToRepeatAndLogOnException_whenException_thenRightCommands() throws Exception {
         Move testCmd = mock(Move.class);
         doThrow(NullPointerException.class).when(testCmd).execute();
 

@@ -1,5 +1,5 @@
 package org.spacebattle.domain.actions;
 
 public interface ICommand {
-    void execute();
+    void execute() throws Exception;
 }

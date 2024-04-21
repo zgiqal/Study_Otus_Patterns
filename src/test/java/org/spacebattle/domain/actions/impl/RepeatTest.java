@@ -15,7 +15,7 @@ public class RepeatTest {
     }
 
     @Test
-    void givenParams_whenExecute_thenSuccessLog() {
+    void givenParams_whenExecute_thenSuccessLog() throws Exception {
         ICommand mockCmd = mock(ICommand.class);
         new Repeat(mockCmd).execute();
         verify(mockCmd, times(1)).execute();

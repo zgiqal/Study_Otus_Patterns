@@ -15,7 +15,7 @@ public class RepeatHandlerTest {
     RepeatHandler testHandler = new RepeatHandler();
 
     @Test
-    void givenParams_whenApply_thenSuccess() throws InterruptedException {
+    void givenParams_whenApply_thenSuccess() throws Exception {
         ICommand testCmd = mock(ICommand.class);
         assertTrue(Main.queue.isEmpty());
 
