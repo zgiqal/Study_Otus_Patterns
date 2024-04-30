@@ -16,7 +16,7 @@ public class Main {
     public static final BlockingQueue<ICommand> queue = new LinkedBlockingQueue<>(100);
     public static final AtomicBoolean RUNNING = new AtomicBoolean(true);
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
         while(RUNNING.get() || !queue.isEmpty()) {
             ICommand cmd = queue.poll(100, MICROSECONDS);
             if (cmd == null) continue;

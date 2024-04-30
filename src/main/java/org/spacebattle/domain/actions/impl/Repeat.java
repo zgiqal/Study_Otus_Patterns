@@ -13,7 +13,7 @@ public class Repeat implements ICommand, IRepeatable {
     private ICommand cmd;
 
     @Override
-    public void execute() {
+    public void execute() throws Exception {
         cmd.execute();
     }
 }
